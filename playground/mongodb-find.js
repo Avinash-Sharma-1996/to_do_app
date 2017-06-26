@@ -40,7 +40,7 @@ db.collection('Users').find({
   console.log(JSON.stringify(docs,undefined,2));
 },(err)=>{
   console.log('unable to find',err);
-});y
+});
 
 // db.close();
 });
