@@ -32,6 +32,17 @@ app.post('/todos',(req,res)=>{
 })
 
 
+app.get('/todos',(req,res)=>{
+  Todo.find().then((todo)=>{
+    res.send({todo});
+  },(e)=>{
+    res.status(400).send(e);
+  })
+});
+
+
+
+
 app.listen(3000,()=>{
   console.log('started on port 30000');
 });
@@ -69,3 +80,5 @@ app.listen(3000,()=>{
 // },(e)=>{
 //   console.log('unable to save todo',e);
 // });
+
+module.exports={app};
